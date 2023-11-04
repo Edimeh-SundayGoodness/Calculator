@@ -144,7 +144,7 @@ cntrls.forEach((control) =>{
             secondString = ''
             upperDisplay = ''
             // number = ''
-            // clicked = false
+            clicked = false
             console.log(stringnum)
         }
         
