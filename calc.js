@@ -25,7 +25,7 @@ let clicked = false
 let secondString = ''
 let optClicked = '';
 let secondpart = ''
-let clearAll = ' '
+// let clearAll = ' '
 
 numbers.forEach((number) => {
 
@@ -51,12 +51,13 @@ numbers.forEach((number) => {
                 typednum.innerHTML = `you cannot exceed 9 values`
             }
             event.preventDefault()
-            console.log(secondString)
+            // console.log(secondString)
             upperDisplay =  `${stringnum} ${optClicked} ${secondString}`
-            console.log(secondString)
             answertyped.innerHTML = upperDisplay
         }
-      return  
+        console.log(secondString)
+        console.log(stringnum)
+    //   return  
     })
 });
 
@@ -65,52 +66,24 @@ operators.forEach((operator) =>{
 
         clicked = true
        console.log(clicked)
-        
         optClicked = operator.value;
         
         upperDisplay =  `${stringnum} ${optClicked} ${secondString}`
-        console.log(secondString)
+        // console.log(secondString)
         answertyped.innerHTML = upperDisplay
         // let secondpart = secondString
         // upperDisplay += secondString
         console.log(secondString)
         typednum.innerHTML = clicked ? secondString : stringnum
-        return
+        // return
         // console.log(answertyped.innerHTML)
     })
 })
 
-cntrls.forEach((control) =>{
-    control.addEventListener('click', (event) =>{
-        clear = control.value
-        if(clear === "AC"){
-            typednum.innerHTML = ''
-            answertyped.innerHTML = ''
-            upperDisplay = '';
-            console.log('present')
-            stringnum = ''
-            secondString = ''
-            optClicked = ''
-            // number = ''
-            console.log(secondString)
-        }else if(clear === "delete"){
-            let length = secondString.length
-            let slice = typednum.innerHTML.slice(1)
-            let part = slice.innerHTML
-            part = ''
-            console.log(slice)
-            typednum.innerHTML += part
-        
-
-        }
-        event.preventDefault()
-        return
-    })
-})
 
 equalto.addEventListener('click', (event) =>{
      // console.log(typeof(answer))
-   
+     
      if(optClicked === "+"){
         answer = Number(stringnum)
         typed = Number(secondString)
@@ -119,7 +92,7 @@ equalto.addEventListener('click', (event) =>{
         typednum.innerHTML = answer + typed
         answertyped.innerHTML = upperDisplay
 
-        return
+        // return
     }else if(optClicked === "-"){
         answer = Number(stringnum)
         typed = Number(secondString)
@@ -127,7 +100,7 @@ equalto.addEventListener('click', (event) =>{
         // stringnum = ''
         typednum.innerHTML = answer - typed
         answertyped.innerHTML = upperDisplay
-        return
+        // return
     }else if(optClicked === "*"){
         answer = Number(stringnum)
         typed = Number(secondString)
@@ -139,7 +112,7 @@ equalto.addEventListener('click', (event) =>{
         // stringnum = ''
         typednum.innerHTML = answer * typed
         answertyped.innerHTML = upperDisplay
-        return
+        // return]]
     }else if(optClicked === "/"){
         answer = Number(stringnum)
         typed = Number(secondString)
@@ -147,7 +120,7 @@ equalto.addEventListener('click', (event) =>{
         // stringnum = ''
         typednum.innerHTML = answer / typed
         answertyped.innerHTML = upperDisplay
-        return
+        // return
     }else if(optClicked === "%"){
         answer = Number(stringnum)
         typed = Number(secondString)
@@ -155,8 +128,27 @@ equalto.addEventListener('click', (event) =>{
         // stringnum = ''
         typednum.innerHTML = answer % typed
         answertyped.innerHTML = upperDisplay
-        return
+        // return
     }
 })
     
+cntrls.forEach((control) =>{
+    control.addEventListener('click', (event) =>{
+        let CntrlClicked = control.value
+        if(CntrlClicked === "AC"){
+            let clear = ''
+            typednum.innerHTML = clear
+            answertyped.innerHTML = clear
+            optClicked.innerHTML = ''
+            stringnum = ''
+            secondString = ''
+            upperDisplay = ''
+            // number = ''
+            // clicked = false
+            console.log(stringnum)
+        }
+        
+        
+    })
+})
    
