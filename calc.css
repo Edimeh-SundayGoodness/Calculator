@@ -278,4 +278,9 @@ footer, header, hgroup, menu, nav, section {
         height: 2em;
     
     }
+    #mod{
+        font-size: x-large;
+        width: 2.6em;
+        height: 2.6em;
+    }
 }

@@ -25,6 +25,7 @@ let clicked = false
 let secondString = ''
 let optClicked = '';
 let secondpart = ''
+
 // let clearAll = ' '
 
 numbers.forEach((number) => {
@@ -46,7 +47,7 @@ numbers.forEach((number) => {
             console.log('am in second string')
             secondString += number.value
             if(secondString.length<10){
-                typednum.innerHTML = secondString
+                answertyped.innerHTML = secondString
             }else if(secondString.length>9){
                 typednum.innerHTML = `you cannot exceed 9 values`
             }
@@ -112,7 +113,7 @@ equalto.addEventListener('click', (event) =>{
         // stringnum = ''
         typednum.innerHTML = answer * typed
         answertyped.innerHTML = upperDisplay
-        // return]]
+        // return
     }else if(optClicked === "/"){
         answer = Number(stringnum)
         typed = Number(secondString)
@@ -130,6 +131,8 @@ equalto.addEventListener('click', (event) =>{
         answertyped.innerHTML = upperDisplay
         // return
     }
+    // return stringnum
+    clicked = false
 })
     
 cntrls.forEach((control) =>{
@@ -145,10 +148,26 @@ cntrls.forEach((control) =>{
             upperDisplay = ''
             // number = ''
             clicked = false
+            stringanswer = Number(stringans)
+            typednum.innerHTML = stringanswer
             console.log(stringnum)
         }
-        
-        
+        if(CntrlClicked === "delete"){
+            if(clicked){
+                secondString = secondString.slice(0, -1)
+                console.log(secondString)
+                upperDisplay.innerHTML = upperDisplay.slice(0, -1)
+            }else{
+                stringnum = stringnum.slice(0, -1)
+                console.log(stringnum)
+            }
+            answertyped.innerHTML = answertyped.innerHTML.slice(0, -1)
+            typednum.innerHTML = typednum.innerHTML.slice(0, -1)
+            // numbers.innerHTML = numbers.slice(0, -1)
+            console.log(answertyped.innerHTML)
+            console.log(typednum.innerHTML)
+            clicked = false
+        }
     })
 })
    
